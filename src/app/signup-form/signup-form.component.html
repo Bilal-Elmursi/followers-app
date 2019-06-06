@@ -1,0 +1,67 @@
+<form>
+    <input type="text" class="form-control" (keyup.enter)="createPost(Post)" #Post>
+    
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let item of posts"
+            (click)="deletePost(item)" class="btn btn-default btn-sm">
+            {{item.title}}
+        </li>
+    </ul>
+</form>
+
+<!-- <form>
+    <input type="text" class="form-control" (keyup.enter)="createPost(Post)" #Post>
+    
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let item of topics"
+            (click)="deletePost(item)" class="btn btn-default btn-sm">
+            {{item.value?.title}}
+        </li>
+    </ul>
+</form> -->
+
+<!-- <form [formGroup]='form' (ngSubmit)="Login()">
+    <div *ngIf="form.errors" class="alert alert-danger">
+        invalid username or password
+    </div>
+    <div formGroupName="account">
+
+
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input id="username" formControlName="username" type="text" class="form-control">
+            <div *ngIf="username.pending" class="spinner-border" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+            <div *ngIf="username.touched && username.invalid" class="alert alert-danger">
+                <div *ngIf="username.errors.required">
+                    UserName Is Required
+                </div>
+                <div *ngIf="username.errors.minlength">
+                    UserName shoud be minimum {{username.errors.minlength.requiredLength}} characters
+                </div>
+                <div *ngIf="username.errors._shouldBeUnique">
+                    UserName should Be Unique
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input id="password" formControlName="password" type="text" class="form-control">
+            <div *ngIf="password.pending" class="spinner-border" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+            <div *ngIf="password.touched && password.invalid" class="alert alert-danger">
+
+                <div *ngIf="password.errors.required">
+                    password Is Required
+                </div>
+                <div *ngIf="password.errors._shouldBeUnique">
+                    UserName should Be Unique
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-primary" type="submit">Sign Up</button>
+</form> -->
